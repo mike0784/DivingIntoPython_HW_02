@@ -9,8 +9,8 @@ def verificationAdd(i):
 
 def nalog():
     global summa
-    if summa > 5000000:
-        summa -= summa * 0.1
+    if summa > limit:
+        summa -= summa * wealthTax
 
 def percentageForWithdrawal(i):
     temp = i * 0.015
@@ -24,7 +24,7 @@ def percentageForWithdrawal(i):
 def Procent():
     global summa, count
     count += 1
-    if count == 3:
+    if count == countSize:
         summa += summa * procent
         count = 0
 
@@ -34,6 +34,9 @@ maxPop = 600
 cratnost = 50
 procent = 0.03
 count = 0
+countSize = 3
+limit = 5000000
+wealthTax = 0.1
 while True:
     print("1 - Внести деньги\n2 - Снять деньги\n3 - Выход")
     action = int(input("Выберите операцию: "))
